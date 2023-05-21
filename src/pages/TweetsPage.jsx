@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAllUsers } from "../components/redux/thunk";
 import { selectItems } from "../components/redux/selectors";
 import ButtonLoadMore from "../components/Buttons/ButtonLoadMore";
-import UsersList from "../components/UsersList";
+import TweetsList from "../components/TweetsList";
 import { selectIsLoading } from "../components/redux/selectors";
 import ButtonBack from "../components/Buttons/ButtonBack";
 import ButtonTop from "../components/Buttons/ButtonTop";
 import { scrollWindow } from "../components/utils/ScrollWindow";
 
-const UsersPage = () => {
+const TweetsPage = () => {
   const [displayedUsers, setDisplayedUsers] = useState([]);
   const dispatch = useDispatch();
   const users = useSelector(selectItems);
@@ -43,7 +43,7 @@ const UsersPage = () => {
     <main className="py-10">
       <div className="container  flex flex-col mx-auto justify-center items-center text-center font-main ">
         <ButtonBack />
-        <UsersList displayedUsers={displayedUsers} />
+        <TweetsList displayedUsers={displayedUsers} />
         {!isLoading && users.length > displayedUsers.length && (
           <ButtonLoadMore handleLoadMore={handleLoadMore} />
         )}
@@ -53,4 +53,4 @@ const UsersPage = () => {
   );
 };
 
-export default UsersPage;
+export default TweetsPage;

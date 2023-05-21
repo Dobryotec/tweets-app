@@ -3,7 +3,7 @@ import Logo from "../assets/Logo.svg";
 import Circle from "../assets/Circle.png";
 import { useState, useEffect } from "react";
 
-const User = ({ id, followers, tweets, user, avatar }) => {
+const Tweet = ({ id, followers, tweets, user, avatar }) => {
   const [followersCount, setFollowersCount] = useState(followers);
   const [follow, setFollow] = useState(true);
 
@@ -94,4 +94,4 @@ const User = ({ id, followers, tweets, user, avatar }) => {
   );
 };
 
-export default User;
+export default Tweet;

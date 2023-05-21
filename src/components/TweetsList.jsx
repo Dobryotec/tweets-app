@@ -1,9 +1,9 @@
-import User from "./User";
+import Tweet from "./Tweet";
 import { selectIsLoading, selectError } from "./redux/selectors";
 import { useSelector } from "react-redux";
 import { ScaleLoader } from "react-spinners";
 
-const UsersList = ({ displayedUsers }) => {
+const TweetsList = ({ displayedUsers }) => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
@@ -20,7 +20,7 @@ const UsersList = ({ displayedUsers }) => {
       {error && <div>{error}</div>}
       {displayedUsers.map(({ id, tweets, user, followers, avatar }) => {
         return (
-          <User
+          <Tweet
             key={id}
             id={id}
             tweets={tweets}
@@ -34,4 +34,4 @@ const UsersList = ({ displayedUsers }) => {
   );
 };
 
-export default UsersList;
+export default TweetsList;
